@@ -1,0 +1,54 @@
+{
+  "Card": {
+    "card-border-color": {
+      "value": "{Neutral.neutral-100}",
+      "type": "color"
+    },
+    "card-hover-border-color": {
+      "value": "{Foundation.Secondary.secondary-100}",
+      "type": "color"
+    }
+  },
+  "Button": {
+    "button-primary-background-color": {
+      "value": "{Foundation.Primary.primary-500}",
+      "type": "color"
+    },
+    "button-primary-hover-background-color": {
+      "value": "{Foundation.Primary.primary-700}",
+      "type": "color"
+    },
+    "button-primary-color": {
+      "value": "{Foundation.Absolutes.white}",
+      "type": "color"
+    },
+    "button-secondary-background-color": {
+      "value": "{Foundation.Primary.primary-50}",
+      "type": "color"
+    },
+    "button-secondary-hover-background-color": {
+      "value": "{Foundation.Primary.primary-100}",
+      "type": "color"
+    },
+    "button-secondary-color": {
+      "value": "{Foundation.Primary.primary-500}",
+      "type": "color"
+    }
+  },
+  "Icon": {
+    "icon-default-fill": {
+      "value": "{Foundation.Secondary.secondary-300}",
+      "type": "color"
+    }
+  },
+  "Input": {
+    "input-border-color": {
+      "value": "{Foundation.Neutral.neutral-100}",
+      "type": "color"
+    },
+    "input-focus-border-color": {
+      "value": "{Foundation.Primary.primary-200}",
+      "type": "color"
+    }
+  }
+}
