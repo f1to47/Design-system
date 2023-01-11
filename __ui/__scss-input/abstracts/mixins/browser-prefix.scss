@@ -1,0 +1,16 @@
+//compatibilizador Browser
+@mixin geneBrow($geneBrow1, $geneBrow2) {
+    -webkit-#{$geneBrow1}: $geneBrow2;
+    -moz-#{$geneBrow1}: $geneBrow2;
+    -ms-#{$geneBrow1}: $geneBrow2;
+    -o-#{$geneBrow1}: $geneBrow2;
+    #{$geneBrow1}: $geneBrow2;
+  }
+  
+  @mixin disp($disp) {
+    display: -webkit-#{$disp};
+    display: -moz-#{$disp};
+    display: -ms-#{$disp};
+    display: -o-#{$disp};
+    display: $disp;
+  }

@@ -1,0 +1,102 @@
+//Fonts
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot  woff ttf svg) {
+	$src: null;
+	
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote("../../__font-library/" + $path + "." + $extmod)) format(quote($format)), comma);
+
+
+	}
+
+
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+
+
+}
+
+// FONT ROBOTO FAMILY
+@include font-face(roboto, roboto/roboto-black-webfont, 900, normal, woff );
+@include font-face(roboto, roboto/roboto-blackitalic-webfont, 900, italic, woff );
+@include font-face(roboto, roboto/roboto-bold-webfont, 700, normal, woff );
+@include font-face(roboto, roboto/roboto-bolditalic-webfont, 700, italic, woff );
+@include font-face(roboto, roboto/roboto-medium-webfont, 500, normal, woff );
+@include font-face(roboto, roboto/roboto-mediumitalic-webfont, 500, italic, woff );
+@include font-face(roboto, roboto/roboto-regular-webfont, 400, normal, woff );
+@include font-face(roboto, roboto/roboto-regularitalic-webfont, 400, italic, woff );
+@include font-face(roboto, roboto/roboto-light-webfont, 300, normal, woff );
+@include font-face(roboto, roboto/roboto-lightitalic-webfont, 300, italic, woff );
+@include font-face(roboto, roboto/roboto-thin-webfont, 100, normal, woff );
+@include font-face(roboto, roboto/roboto-thinitalic-webfont, 100, italic, woff );
+
+// FONT BARLOW
+@include font-face(Barlow, barlow/Barlow-Bold, bold, normal, eot woff  ttf );
+@include font-face(Barlow, barlow/Barlow-LightItalic, 300, italic, eot woff  ttf );
+@include font-face(Barlow, barlow/Barlow-Regular, normal, normal, eot woff  ttf );
+@include font-face(Barlow, barlow/Barlow-Medium, 500, normal, eot woff  ttf );
+@include font-face(Barlow, barlow/Barlow-Italic, normal, italic, eot woff  ttf );
+@include font-face(Barlow, barlow/Barlow-Black, 900, normal, eot woff  ttf );
+@include font-face(Barlow, barlow/Barlow-BoldItalic, bold, italic, eot woff  ttf );
+@include font-face(Barlow, barlow/Barlow-ThinItalic, 100, italic, eot woff  ttf );
+@include font-face(Barlow, barlow/Barlow-Light, 300, normal, eot woff  ttf );
+@include font-face(Barlow, barlow/Barlow-SemiBold, 600, normal, eot woff  ttf );
+@include font-face(Barlow, barlow/Barlow-Thin, 100, normal, eot woff  ttf );
+@include font-face(Barlow, barlow/Barlow-SemiBoldItalic, 600, italic, eot woff  ttf );
+@include font-face(Barlow, barlow/Barlow-BlackItalic, 900, italic, eot woff  ttf );
+@include font-face(Barlow, barlow/Barlow-MediumItalic, 500, italic, eot woff  ttf );
+
+
+// FONT FS JS 
+@include font-face(FSJoey, fs-joey/FSJoey-Light, 300, normal, eot woff  ttf );
+@include font-face(FSJoey, fs-joey/FSJoey-Medium, 500, normal, eot woff  ttf );
+@include font-face(FSJoey, fs-joey/FSJoey, normal, normal, eot woff  ttf );
+@include font-face(FSJoey, fs-joey/FSJoey-Italic, normal, italic, eot woff  ttf );
+@include font-face(FSJoey, fs-joey/FSJoey-Italic, normal, italic, eot woff  ttf ); 
+@include font-face(FSJoey, fs-joey/FSJoey-MediumItalic, 500, italic, eot woff  ttf );
+@include font-face(FSJoey, fs-joey/FSJoey-LightItalic, 300, italic, eot woff  ttf );
+@include font-face(FSJoey, fs-joey/FSJoey-BoldItalic, bold, italic, eot woff  ttf );
+@include font-face(FSJoey, fs-joey/FSJoey-Bold, bold, normal, eot woff  ttf );
+@include font-face(FSJoey, fs-joey/FSJoey-Heavy, 900, normal, eot woff  ttf );
+@include font-face(FSJoey, fs-joey/FSJoey-HeavyItalic, 900, italic, eot woff  ttf );
+
+
+// NEW PACKS
+
+
+@include font-face(capital-icons, icon-library/icomoon, eot woff ttf);
+
+
+
+
+
+
+
+
+

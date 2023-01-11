@@ -1,0 +1,17 @@
+@import './abstracts/variables/_index-variables/index.scss';
+@import './abstracts/mixins/_index-mixins/index.scss';
+@import './base/animate.scss';
+
+.LAYOUT{
+
+	@import './base/reset.scss';
+	@import './base/grids.scss';
+	@import './base/headings.scss';
+	@import './base/sections.scss';
+	@import './base/links.scss';
+	@import './components/_index-components/index.scss';
+	 
+	font-size: 16px;
+
+}
+

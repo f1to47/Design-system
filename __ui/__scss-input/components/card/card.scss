@@ -1,0 +1,442 @@
+// mixin
+@mixin card-column-mode {
+
+    .container {
+        flex-direction: column;
+
+        .text-zone {
+            // background-color: var(--secondary-200);
+            flex: 0 1 0;
+            
+
+            h1,
+            h2,
+            h3,
+            h4 {
+                text-align: center;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            p {
+                display: table;
+                margin-left: auto;
+                margin-right: auto;
+
+            }
+
+        }
+
+        .icon-zone {
+            // background-color: var(--secondary-100);
+            flex: 0 1 0px;
+            justify-content: center;
+            span{
+                text-align: center;
+
+            }
+        }
+
+        .graphic-zone {
+            // background-color: var(--secondary-100);
+            flex: 0 0 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            >*{
+                width: 100%;
+            }
+        }
+    }
+
+
+    &.card-vertical-center {
+        .container {
+            justify-content: center;
+        }
+    }
+
+    // la card se comportará de este modo si el espacio permite que el text-zone cumpla con su flex-basis, ignorando lo establecido desde los breackpoints.
+}
+
+@mixin card-row-mode {
+
+    .container {
+        flex-direction: row;
+
+
+        .text-zone {
+            // background-color: var(--primary-200);
+            flex: 1000 1 200px;
+           
+            
+
+
+            h1,
+            h2,
+            h3,
+            h4 {
+                text-align: left;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            p {
+                display: table;
+                margin-left: 0;
+                margin-right: auto;
+
+            }
+
+           
+
+
+        }
+
+        .icon-zone {
+            // background-color: var(--primary-100);
+            align-items: flex-start;
+            flex: 1 1 auto;
+        }
+
+        .graphic-zone {
+            // background-color: var(--primary-100);
+            flex: 1 0 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            >*{
+                width: 100%;
+            }
+        }
+
+    }
+
+    &.card-vertical-center {
+        .container {
+            align-content: center;    
+        }
+    }
+
+
+
+
+
+    // la card se comportará de este modo si el espacio permite que el text-zone cumpla con su flex-basis, ignorando lo establecido desde los breackpoints.
+
+
+}
+
+@mixin card-option {
+    @include card-row-mode;
+    .card-option-zone {
+        // background-color: aquamarine;
+        padding-right: 10px;
+        border-right: 2px dotted var(--neutral-100)
+    }
+
+    @include mdMax {
+        @include card-row-mode;
+    }
+}
+// mixin
+
+
+
+
+
+
+.card {
+    --card-padding: 30px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    overflow: hidden;
+    @include shadow-2;
+    background-color: #ffffff;
+
+    // card media queries
+
+
+    @include mdMin {
+        @include card-row-mode;
+    }
+
+    @include mdMax {
+        @include card-column-mode;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// card childs
+.card {
+
+    >.container {
+        display: flex;
+        gap: 15px;
+        height: 100%;
+        padding: var(--card-padding);
+        flex-wrap: wrap;
+        
+    }
+
+
+    .icon-zone {
+        // estilos globales
+        padding: 0;
+        display: flex;
+            >* {
+
+                width: 0;
+                max-width: 120px;
+                min-width: 60px;
+            }
+
+    }
+
+
+
+
+    .text-zone {
+        // estilos globales
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+ 
+
+    >.card-controller {
+        padding: var(--spacing-medium);
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        &.card-controller-top {
+            border-bottom: 1px var(--primary-100) solid;
+        }
+
+        &.card-controller-bottom {
+            border-top: 1px var(--primary-100) solid;
+            margin-top: auto;
+        }
+
+        &.card-controller-right {
+            flex-direction: row-reverse;
+        }
+
+
+    }
+
+
+
+}
+
+
+
+
+//card attribute clases
+.card {
+
+
+    &.card-modal {
+        max-height: 450px;
+
+        .container {
+            height: calc(100% - 60px);
+            overflow-y: auto;
+        }
+
+        .button-close {
+            margin-left: auto;
+        }
+
+    }
+
+    &.card-step{
+        
+        @include card-row-mode;
+        @include mdMax{
+            @include card-row-mode;
+        }
+        .container{
+            flex-wrap: nowrap;
+        }
+        .icon-zone{
+            width: auto;
+            // background-color: antiquewhite;
+            span{
+                font-size: var(--card-number-font-size);
+                font-weight: var(--card-number-font-weight);
+                min-width: 40px;
+                max-width: 40px;
+                margin-top: -10px;
+            }
+
+        }
+    }
+
+    &.card-click {
+
+        -webkit-transition: all 0.2s 0s ease;
+        -moz-transition: all 0.2s 0s ease;
+        -o-transition: all 0.2s 0s ease;
+        transition: all 0.2s 0s ease;
+
+        outline: 0 solid transparent;
+
+        &:hover {
+            outline: 10px solid var(--primary-500-20);
+        }
+
+    }
+
+    &.brother {
+        height: 100%;
+
+        .container {
+            height: 100%;
+        }
+    }
+
+
+
+    &.card-column-mode {
+        @include card-column-mode;
+    }
+
+    &.card-row-mode {
+        @include card-row-mode;
+    }
+
+
+    &.card-option {
+        @include card-option;
+        @include mdMax{
+            @include card-option;
+        }
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  ====================================
+
+//  .card-row-mode{
+//     .container{
+//         flex-direction: row!important;
+//     }
+//  }
+//  .card-column-mode{
+//     .container{
+//         flex-direction: column!important;
+//     }
+//  }
+
+//  .card-vertical-center-mode{
+//     justify-content: center!important;
+
+//     .container{
+//          align-items: center!important;
+//     }
+
+//     .text-zone, .graphic-zone{
+//         justify-content: center!important;
+
+//     } 
+// }
+
+// .card-horizontal-center-mode{
+//     justify-content: center!important;
+
+//     .container{
+//          align-items: center!important;
+//     }
+
+//     .text-zone, .graphic-zone{
+//         justify-content: center!important;
+
+//     } 
+// }
+
+.card {
+
+
+
+
+
+
+
+
+
+    // @include attrRange(margin-#{card-horizontal}) {
+
+    //     .container{
+    //         flex-direction: row; 
+    //         flex-wrap: nowrap;
+
+    //         .index-zone{  width: 50px; }
+    //         .text-zone{  
+    //             width: calc(70% - 25px);
+    //             margin-left: 0; 
+    //             margin-right: 0;  
+    //             height: 100%;
+    //             margin-top: calc( 0rem - var(--spacing-medium));
+    //             margin-top: calc( 0rem - var(--spacing-medium));
+    //            }
+    //         .graphic-zone{  width: calc(30% - 25px); }
+    //        }
+
+
+    //   }
+
+
+
+
+
+
+    // @include mdMax {
+    //     .container {
+    //         flex-direction: column;
+    //     }
+    // }
+
+}

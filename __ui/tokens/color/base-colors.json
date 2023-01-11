@@ -1,0 +1,12 @@
+{
+  "red": {
+    "red-50": {
+      "value": "#fde6ee",
+      "type": "color"
+    },
+    "red-100": {
+      "value": "#f9b0ca",
+      "type": "color"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "0": {
+    "value": "0",
+    "type": "sizing"
+  },
+  "none": {
+    "value": "0",
+    "type": "sizing"
+  },
+  "micro": {
+    "value": "0.375em",
+    "type": "sizing"
+  },
+  "smaller": {
+    "value": "0.5em",
+    "type": "sizing"
+  },
+  "extra-small": {
+    "value": "0.625em",
+    "type": "sizing"
+  },
+  "small": {
+    "value": "0.75em",
+    "type": "sizing"
+  },
+  "medium-small": {
+    "value": "0.875em",
+    "type": "sizing"
+  },
+  "medium": {
+    "value": "1em",
+    "type": "sizing"
+  },
+  "medium-big": {
+    "value": "1.125em",
+    "type": "sizing"
+  },
+  "big": {
+    "value": "1.375em",
+    "type": "sizing"
+  },
+  "extra-big": {
+    "value": "1.75em",
+    "type": "sizing"
+  },
+  "bigger": {
+    "value": "2.25em",
+    "type": "sizing"
+  },
+  "giant": {
+    "value": "2.875em",
+    "type": "sizing"
+  }
+}

@@ -1,0 +1,10 @@
+:root {
+    @each $key, $value in $sizing {
+           --size-#{$key} : #{$value};
+    }    
+    @each $key, $value in $sizing{
+      --spacing-#{$key} : #{$value};
+  }    
+       
+
+}

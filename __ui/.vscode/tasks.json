@@ -1,0 +1,72 @@
+// Sass configuration
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+
+    //BASE
+
+    {
+      "label": "COMPILAR BASE",
+      "type": "shell",
+      "command": "node-sass --source-map true ./src/base/scss/layout-builder.scss ./src/base/css/layout-builder.css",
+      "group": "build"
+    },
+
+
+    {
+      "label": "COMPILAR UTILITIES",
+      "type": "shell",
+      "command": "node-sass --source-map true ./src/utilities/scss/utilities.scss ./src/utilities/css/utilities.css",
+      "group": "build"
+    },
+
+
+    //Exportar BASE
+    // Podemos aplicar la base de los estilos a otras clases constructoras 
+
+    {
+        "label": "EXPORTAR BASE",
+        "type": "shell",
+        "command": "node-sass --source-map true ./_scss/layout-builder/layout-export/${fileBasenameNoExtension}/${fileBasenameNoExtension}.scss   ./layout/layout-export/${fileBasenameNoExtension}/${fileBasenameNoExtension}.css",
+        "group": "build"
+      },
+
+
+
+
+ 
+      
+
+      {
+        "label": "COMPILAR PAGINA",
+        "type": "shell",
+        "command": "node-sass --source-map true ./src/modules/pages/${fileBasenameNoExtension}/scss/${fileBasenameNoExtension}.scss -o  ./src/modules/pages/${fileBasenameNoExtension}/css/",
+        "group": "build"
+      },
+
+
+
+      {
+        "label": "COMPILAR FUENTES",
+        "type": "shell",
+        "command": "node-sass --source-map true ./src/fonts/scss/font-import.scss -o  ./src/fonts/css/",
+        "group": "build"
+      },
+
+
+
+
+
+
+
+    
+
+
+
+
+
+ 
+  ]
+}

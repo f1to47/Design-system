@@ -1,0 +1,24 @@
+{
+  "name": "web-tono",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile-fonts": "node-sass --source-map true ./__scss-input/__font-import.scss -o ./__css-ouput/",
+    "compile-core": "node-sass --source-map true ./__scss-input/_core.scss -o ./__css-ouput/",
+    "build-colors": "style-dictionary build --config ./style-dictionary/colors.js",
+    "font-styles": "style-dictionary build --config ./style-dictionary/font-styles.js",
+    "font-size": "style-dictionary build --config ./style-dictionary/font-size.js",
+    "font-families": "style-dictionary build --config ./style-dictionary/font-families.js",
+    "font-components": "style-dictionary build --config ./style-dictionary/font-components.js",
+    "font-tokens": "npm run font-size && npm run font-styles && npm run font-families && npm run font-components",
+    "build-sizing": "style-dictionary build --config ./style-dictionary/sizing.js",
+    "light-theme": "style-dictionary build --config ./style-dictionary/light-theme.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "style-dictionary": "^3.7.1"
+  }
+}

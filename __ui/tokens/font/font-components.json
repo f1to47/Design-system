@@ -1,0 +1,14 @@
+{
+  "card-number-font-size": {
+    "value": "{fontSize.bigger}",
+    "type": "fontSizes"
+  },
+  "card-number-font-weight": {
+    "value": "800",
+    "type": "fontWeights"
+  },
+  "card-number-font-family": {
+    "value": "{fontFamilies.fs-joey}",
+    "type": "fontFamilies"
+  }
+}

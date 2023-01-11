@@ -1,0 +1,35 @@
+// @media (prefers-color-scheme: dark) {
+    :root {
+        @each $key, $value in $font-sizes {
+               --#{$key} : #{$value};
+        }
+
+
+        @each $key, $value in $font-families {
+            --#{$key} : #{$value};
+     }
+
+
+        @each $key, $value in $font-styles {
+            --#{$key} : #{$value};
+     }
+
+
+
+     @each $key, $value in $font-components {
+        --#{$key} : #{$value};
+ }
+        
+
+ 
+           
+    
+    
+        
+        
+        
+       
+        
+            }
+        // }
+        

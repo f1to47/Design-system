@@ -1,0 +1,50 @@
+// Medias Queries
+//small devices
+@mixin sdMin {
+    @media (min-width: map-get($devices, sd )) {
+      @content;
+    }
+  } //min 450px
+  @mixin sdMax {
+    @media (max-width: map-get($devices, sd )) {
+      @content;
+    }
+  } //max 450px
+  
+  //medium devices
+  @mixin mdMin {
+    @media (min-width: map-get($devices, md )) {
+      @content;
+    }
+  } //min 760px
+  
+  @mixin mdMax {
+    @media (max-width: map-get($devices, md )) {
+      @content;
+    }
+  } //max760px
+  
+  //large devices
+  @mixin ldMin {
+    @media (min-width: map-get($devices, ld )) {
+      @content;
+    }
+  } //min 960px
+  @mixin ldMax {
+    @media (max-width: map-get($devices, ld )) {
+      @content;
+    }
+  } //max 960px
+  
+  //extra large devices
+  @mixin xldMin {
+    @media (min-width: map-get($devices, xld )) {
+      @content;
+    }
+  } //min 1280px
+  
+  @mixin xldMax {
+    @media (max-width: map-get($devices, xld )) {
+      @content;
+    }
+  } //max1280px

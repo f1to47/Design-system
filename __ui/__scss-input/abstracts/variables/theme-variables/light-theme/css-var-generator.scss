@@ -1,0 +1,19 @@
+// @media (prefers-color-scheme: dark) {
+  :root {
+@each $key, $value in $light-theme-colors {
+       --#{$key} : #{$value};
+}   
+
+
+@for $i from 1 through 9 {
+
+
+  @each $key, $value in $light-theme-colors {
+    --#{$key}-#{$i}0 : #{$value}#{$i}0;
+}   
+
+
+}
+
+    }
+// }

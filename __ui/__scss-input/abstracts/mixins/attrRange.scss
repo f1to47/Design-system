@@ -1,0 +1,46 @@
+
+//Mixin
+// BreakPoints para clases de atributos
+// Todas las clases de atributos lo deben usar
+
+$i: 0;
+
+@mixin attrRange($attr) {
+  @each $device, $deviceVal in $devices {
+    $i: $i + 1;
+
+    @if $i >= 2 {
+      $ii: 0;
+      @each $dev, $val in $devices {
+        $ii: $ii + 1;
+
+        $target: $i - 1;
+
+        @if $ii == $target {
+          $prevDevice: $val;
+          @if $deviceVal == map-get($devices, 'xld' ){
+            @media only screen and (max-width: 50000px) and (min-width: $prevDevice) {
+                .#{$device}-#{$attr} {
+                  @content;
+                }
+            }
+          }@else{
+          @media only screen and (max-width: $deviceVal) and (min-width: $prevDevice) {
+            .#{$device}-#{$attr} {
+              @content;
+            }
+          }
+        }
+        }
+      }
+    }
+   
+  }
+}
+
+
+
+
+
+
+  

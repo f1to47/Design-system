@@ -1,0 +1,299 @@
+// 00000000000     00000000000   
+// 00       00     00
+// 00       00     00
+// 00000000000     0000000000
+// 00     00       00
+// 00      00      00           0000
+// 00       00     00000000000  0000
+
+
+/*Modal*/
+
+.modal {
+  @include geneBrow(flex-direction, column);
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 999;
+
+  //Hijos ==========================================================================
+
+
+  .modal_box {
+    z-index: 999;
+    position: absolute;
+    width: auto;
+    display: none;
+    @include geneBrow(flex-direction, column);
+    height: auto;
+
+
+    background-color: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    @include geneBrow(border-radius, 12px);
+    overflow: hidden !important;
+
+    &.active {
+      @include disp(flex);
+    }
+  }
+
+
+
+
+
+  .modal_body {
+    padding: 30px;
+    padding-top: 15px;
+    overflow-x: hidden;
+    height: calc(100% - 50px);
+    min-height: calc(100% - 50px);
+    max-height: calc(100vh - 50px);
+  }
+
+  .modal_header {
+    padding: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-bottom: 1px solid var(--primary-contrast-300);
+    float: left;
+    width: 100%;
+    @include disp(flex);
+    @include geneBrow(justify-content, space-between);
+    @include geneBrow(align-items, center);
+    height: 50px;
+    min-height: 50px;
+
+    &>* {
+      margin: 0 !important;
+    }
+  }
+
+
+  // .button-close {
+  //   top: 3px;
+  //   right: 3px;
+  //   // position: absolute;
+  // }
+
+
+  // Modificadores ==========================================================================
+
+
+  &.modal-center {
+    
+
+   
+
+    &.modal-active {
+      @include disp(flex !important);
+      @include geneBrow(align-items, center !important);
+      @include geneBrow(justify-content, center !important);
+      @include geneBrow(flex-wrap, wrap !important);
+      @include geneBrow(flex-direction, column !important);
+
+      >* {
+        @include geneBrow(flex, 0 0 1 !important);
+      }
+    }
+
+    .modal_box{
+      max-height: calc(100% - 20px)!important;
+      max-width: calc(100% - 20px)!important;
+    }
+    
+    .modal_body{
+    //  height: calc(100% - 20px)!important;
+    // max-height: calc(500px)!important;
+    // max-width: calc(500px)!important;
+    
+    }
+
+    &.full{
+      .modal_box{
+    height: calc(100% - 20px)!important;
+    width: calc(100% - 20px)!important;
+
+      }
+      .modal_body{
+        //  height: calc(100% - 20px)!important;
+        max-height: 100%!important;
+        max-width: 100%!important;
+        
+        }
+    }
+    
+  }
+
+
+
+  &.modal-right {
+
+
+
+    &.modal-active{
+      display: block;
+    }
+
+ 
+      .modal_box{
+      right: 0;
+      left: auto;
+      height: 100%;
+      }
+   
+
+
+  
+
+
+    // .modal_footer{
+    //     padding: 30px;
+    //     padding-top: 0px;
+    //     padding-bottom: 0px;
+    //     border-top: 1px solid map-get($colors , 'lightGray' );
+    //     float: left;
+    //     width: 100%;
+    //     @include disp(flex);
+    //     @include geneBrow(justify-content, space-between);
+    //     @include geneBrow(align-items, center);
+    //     height: 20px;
+
+    //     & > *{
+    //         margin: 0!important;
+    //     }
+    //       }
+
+    .modal_box{
+      max-width: 600px;
+    }
+
+ 
+
+    .modal_body {
+
+      overflow-x: hidden;
+      
+    }
+
+    .button.button-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+
+    }
+
+  }
+
+
+
+
+  @for $i from 1 to 22 {
+
+
+  
+    // max-width---------
+    &.max-w-#{$i * 50} {
+      max-width: none !important;
+      .modal_body{
+        max-width: $i * 50px !important;
+      }
+    }
+    // attr range
+    @include attrRange(max-w-#{$i * 50}) {
+      max-width: none !important;
+      .modal_body{
+        max-width: $i * 50px !important;
+      }
+    }
+    // max-width---------
+  
+  
+  
+
+
+
+
+    // min-width---------
+    &.min-w-#{$i * 50} {
+      min-width: none !important;
+      .modal_body{
+        min-width: $i * 50px !important;
+      }
+    }
+    // attr range
+    @include attrRange(min-w-#{$i * 50}) {
+      min-width: none !important;
+      .modal_body{
+        min-width: $i * 50px !important;
+      }
+    }
+    // min-width---------
+  
+  
+
+
+
+
+  
+  
+  
+    // max-height---------
+    &.max-h-#{$i * 50} {
+      max-height:none !important;
+      .modal_body{
+        max-height: $i * 50px !important;
+      }
+    }
+  
+    // attr range
+    @include attrRange(max-h-#{$i * 50}) {
+      max-height: none !important;
+      .modal_body{
+        max-height: $i * 50px !important;
+      }
+    }
+    // max-height---------
+  
+  
+  
+  
+
+
+
+  
+  
+    // min-height---------
+    &.min-h-#{$i * 50} {
+      min-height: none !important;
+      .modal_body{
+        min-height: $i * 50px !important;
+      }
+    }
+    // attr range
+    @include attrRange(min-h-#{$i * 50}) {
+      min-height: none !important;
+      .modal_body{
+        min-height: $i * 50px !important;
+      }
+    }
+    // min-height---------
+  
+  
+  
+  
+
+
+
+  
+  }
+}
+
+/*FIn Modal*/

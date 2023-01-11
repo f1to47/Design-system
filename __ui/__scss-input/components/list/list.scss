@@ -1,0 +1,8 @@
+ul {
+    list-style-type:disc;
+    padding-left: var(--spacing-medium);
+    li{
+        width: 100%;
+        float: left;
+    }
+}

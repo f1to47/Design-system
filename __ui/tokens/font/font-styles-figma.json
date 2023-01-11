@@ -1,0 +1,55 @@
+{
+  "heading-1": {
+    "value": {
+      "fontFamily": "{h1-font-family}",
+      "fontWeight": "{h1-font-weight}",
+      "fontSize": "{h1-font-size}",
+      "lineHeight": "{h1-line-height}"
+    },
+    "type": "typography"
+  },
+  "heading-2": {
+    "value": {
+      "fontFamily": "{h2-font-family}",
+      "fontWeight": "{h2-font-weight}",
+      "fontSize": "{h2-font-size}",
+      "lineHeight": "{h2-line-height}"
+    },
+    "type": "typography"
+  },
+  "heading-3": {
+    "value": {
+      "fontFamily": "{h3-font-family}",
+      "fontWeight": "{h3-font-weight}",
+      "fontSize": "{h3-font-size}",
+      "lineHeight": "{h3-line-height}"
+    },
+    "type": "typography"
+  },
+  "heading-4": {
+    "value": {
+      "fontFamily": "{h4-font-family}",
+      "fontWeight": "{h4-font-weight}",
+      "fontSize": "{h4-font-size}",
+      "lineHeight": "{h4-line-height}"
+    },
+    "type": "typography"
+  },
+  "paragraph": {
+    "value": {
+      "fontFamily": "{paragraph-font-family}",
+      "fontWeight": "{paragraph-font-weight}",
+      "fontSize": "{paragraph-font-size}",
+      "lineHeight": "{paragraph-line-height}"
+    },
+    "type": "typography"
+  },
+  "card-number": {
+    "value": {
+      "fontFamily": "{card-number-font-family}",
+      "fontWeight": "{card-number-font-weight}",
+      "fontSize": "{card-number-font-size}"
+    },
+    "type": "typography"
+  }
+}

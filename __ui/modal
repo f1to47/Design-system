@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual tono y voz</title>
+    <link rel="stylesheet" href="./src/css/__font-import.css">
+    <link rel="stylesheet" href="./src/css/_core.css">
+    <!-- <style>
+        *{border: 1px salmon solid!important;}
+    </style> -->
+</head>
+
+<body>
+<div class="LAYOUT">
+
+     <!-- <header>
+        <div class="header-nav">
+
+        </div>
+
+    </header> -->
+
+   >
+    <a href="#">Link <i class="icon-CircleCaretRight"></i> </a>
+    <div class="footer">
+        <div class="footer-contact">
+        <div class="container">
+            <a class="contact-item whatsapp " onclick="whatsapp()">
+                 <a class="button button-secondary aqua small margin-top-small max-w-150 center-el" onclick="whatsapp()">Escríbenos</a> -->
+                                </a>
+           
+               
+               
+            </div>
+            
+        </div>
+
+  
+
+
+    <!-- Modal Central -->
+    <div class="modal modal-center modal-center-scrollContent modalWhatsapp">
+        <div class="modal_box max-w-400">
+            <div class="modal_cont">
+                <div class="modal_header">
+                    <div class="button button-close close-action">
+                    </div>
+                </div>
+                <div class="modal_body">
+                    <div class="row" >
+                        <div class="col-12 " style="display: flex; align-items:center">
+                            <i class="icon icon-Warning icon-size-40" style="color: var(--red)"></i>
+                            <h1>Sesión caducada</h1>
+                            <p style="max-width: 300px;">El tiempo de espera se a terminado, inténtalo de nuevo</p>
+                            
+                            <a href="https://api.whatsapp.com/send?phone=56936391222" class="button">
+                                    Salir                                                                                                                                                                                                                                                                                                                                                                                                                               
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Modal Central -->
+</div>
+<script src="./src/js/jquery.js"></script>
+<script src="./src/js/components/modal/modal.js"></script>
+<script src="./src/js/components/footer/footer.js"></script>
+</body>
+
+</html>
