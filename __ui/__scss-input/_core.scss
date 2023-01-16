@@ -1,10 +1,11 @@
 @import './abstracts/variables/_index-variables/index.scss';
 @import './abstracts/mixins/_index-mixins/index.scss';
 @import './base/animate.scss';
+@import './base/reset.scss';
 
 .LAYOUT{
 
-	@import './base/reset.scss';
+	
 	@import './base/grids.scss';
 	@import './base/headings.scss';
 	@import './base/sections.scss';

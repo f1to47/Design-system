@@ -1,0 +1,26 @@
+table, table td, table th{
+    border: 1px solid var(--neutral-100); 
+
+}
+table td, table th{
+    padding: var(--spacing-extra-small);
+    text-align: left;
+}
+
+table th{
+    background-color: var(--neutral-50);
+    font-weight: 700;
+
+    &.use{
+        i{
+            color: var(--success-500);
+            font-weight: 900;
+        }
+    }
+    &.no-use{
+        i{
+            color: var(--error-500);
+            font-weight: 900;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.bodybar {
+	margin-left: auto;
+	flex: 0 1 calc(100% - 410px);
+	// background-color: aqua;
+
+	&.home-bodybar {
+		flex: 0 1 calc(100% - 160px);
+	}
+
+	
+}
+
+.home{
+	.bodybar{
+		flex: 0 1 calc(100% - 160px);
+	}
+}
+
+@include mdMax {
+	.bodybar {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+
+	.cpl-bodybar {
+		margin-left: 0;
+	}
+}
